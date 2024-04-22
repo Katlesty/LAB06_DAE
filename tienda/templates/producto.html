@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container my-4">
+        <h2>{{producto.nombre}}</h2>
+        <img class="w-50" src="{{producto.imagen.url}}">
+        <p class="fs-3">S./ {{producto.precio}}</p>
+        <p>{{producto.detalle}}</p>
+
+    </div>
+{% endblock %}
