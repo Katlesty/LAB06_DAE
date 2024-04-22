@@ -1270,7 +1270,7 @@ top: -1px;
   font-size: 14px;
   font-weight: 600;
   padding: 13px 30px;
-  background-color: #0167F3;
+  background-color: #f39201;
   color: #fff;
   border: none;
   -webkit-transition: 0.2s;
@@ -1309,13 +1309,13 @@ top: -1px;
 
 .button .btn:hover {
   color: #fff;
-  background-color: #081828;
-  -webkit-box-shadow: 0px 4px 4px #0000000f;
-  box-shadow: 0px 4px 4px #0000000f;
+  background-color: #281a08;
+  -webkit-box-shadow: 0px 4px 4px #281a08;
+  box-shadow: 0px 4px 4px #281a08;
 }
 
 .button .btn-alt {
-  background-color: #081828 !important;
+  background-color: #281a08 !important;
   color: #fff !important;
 }
 
@@ -1336,7 +1336,7 @@ top: -1px;
 }
 
 .button .btn-alt:hover {
-  background-color: #0167F3 !important;
+  background-color: #f3bb01 !important;
   color: #fff !important;
 }
 
@@ -2183,7 +2183,7 @@ top: -1px;
   }
 
   .header .navbar-nav .nav-item a:hover {
-    color: #0167F3;
+    color: #281a08;
   }
 }
 
@@ -2345,7 +2345,7 @@ top: -1px;
 
 .header .mega-category-menu .cat-button {
   display: inline-block;
-  color: #081828;
+  color: #281e08;
   font-size: 15px;
   font-weight: 600;
 }
@@ -2550,13 +2550,13 @@ top: 2px;
 }
 
 .header.sticky .button .btn {
-  background-color: #0167F3;
+  background-color: #f3a601;
   color: #fff;
   border-color: transparent;
 }
 
 .header.sticky .button .btn:hover {
-  background-color: #081828;
+  background-color: #281d08;
   color: #fff;
 }
 
@@ -2912,7 +2912,7 @@ top: 2px;
   z-index: 2;
   color: #fff;
   font-size: 17px;
-  background: #0167F3;
+  background: #f3a601;
   border: none;
   padding: 2px 5px;
   border-radius: 4px;
@@ -2926,7 +2926,7 @@ top: 2px;
 }
 
 .hero-area .tns-controls button:hover {
-  background-color: #081828;
+  background-color: #281f08;
   color: #fff;
 }
 
@@ -3168,12 +3168,12 @@ top: 2px;
 
 .hero-area .hero-small-banner.style2 .content .button .btn {
   background-color: #fff;
-  color: #0167F3;
+  color: #f3b201;
   padding: 10px 25px;
 }
 
 .hero-area .hero-small-banner.style2 .content .button .btn:hover {
-  background-color: #0167F3;
+  background-color: #f3b201;
   color: #fff;
 }
 
@@ -3515,7 +3515,7 @@ top: 2px;
     Call Action CSS
 ========================================*/
 .call-action {
-  background-color: #0167F3;
+  background-color: #f3b201;
 }
 
 .call-action .content {
@@ -3557,12 +3557,12 @@ top: 2px;
 
 .call-action .content .button .btn {
   background-color: #fff;
-  color: #081828;
+  color: #281e08;
 }
 
 .call-action .content .button .btn:hover {
   color: #fff;
-  background: #081828;
+  background: #281f08;
 }
 
 /*======================================
@@ -3880,7 +3880,7 @@ top: 2px;
 }
 
 .item-details .product-info .quantity .inner-content input.button:hover {
-  background-color: #0167F3;
+  background-color: #f3b201;
   border-color: transparent;
   color: #fff;
 }
@@ -3923,7 +3923,7 @@ top: 2px;
 
 .item-details .product-info .wish-button .btn:hover {
   color: #fff;
-  background-color: #0167F3;
+  background-color: #f3b201;
   border-color: transparent;
 }
 
@@ -4569,7 +4569,7 @@ top: 2px;
 }
 
 .footer .footer-top .footer-newsletter .newsletter-form .button .btn:hover {
-  color: #081828;
+  color: #281f08;
   background-color: #fff;
 }
 
@@ -4605,12 +4605,12 @@ top: 2px;
 }
 
 .footer .footer-middle .newsletter-form .button .btn {
-  background-color: #081828;
+  background-color: #282108;
   color: #fff;
 }
 
 .footer .footer-middle .newsletter-form .button .btn:hover {
-  background-color: #0167F3;
+  background-color: #f3b201;
   color: #fff;
 }
 

@@ -1,19 +1,151 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="row my-4">
-  {% for prod in productos_list %}
-  <div class="col-lg-4 col-md-6 mb-4">
-    <div class="card h-100">
-      <a href="{% url 'tienda:productos' prod.id %}"><img class="card-img-top"src="{{ prod.imagen.url }}" alt=""></a>
-      <div class="card-body h-100">
-        <h4 class="card-title h-50">
-          <a href="{% url 'tienda:productos' prod.id %}" class="text-decoration-none text-dark fs-6">{{prod.nombre}}</a>
-        </h4>
-        <p class="card-subtitle text-body-tertiary h-25 fs-6">{{prod.categoria.nombre}}</p>
-        <h5 class="h-25 fs-6">S/. {{prod.precio}}</h5>
+<!-- Start Breadcrumbs -->
+<div class="breadcrumbs">
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-lg-6 col-md-6 col-12">
+              <div class="breadcrumbs-content">
+                  <h1 class="page-title">Productos de tienda</h1>
+              </div>
+          </div>
       </div>
-    </div>
   </div>
-  {% endfor %}
 </div>
+<!-- End Breadcrumbs -->
+
+<!-- Start Product Grids -->
+<section class="product-grids section">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-3 col-12">
+              <!-- Start Product Sidebar -->
+              <div class="product-sidebar">
+                  <!-- Start Single Widget -->
+                  <div class="single-widget search">
+                      <h3 class="fs-3 mb-3">Buscar</h3>
+                      <form action="#" class="mb-3">
+                          <div class="input-group rounded">
+                              <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                              <button type="button" class="btn btn-warning" data-mdb-ripple-init>
+                                  <i class="fas fa-search text-white" ></i>
+                                </button>
+                            </div>
+                      </form>
+                  </div>
+                  <!-- End Single Widget -->
+                  <!-- Start Single Widget -->
+                  <div class="single-widget">
+                      <h3 class="fs-3 mb-3">Categorias</h3>
+                      <ul class="list">
+                          {% for cat in categoria_list %}
+                              <li>
+                                  <a class="text-decoration-none text-warning" href="{% url 'tienda:categorias' cat.id %}">{{cat.nombre}} </a><span>({{ cat.producto_set.count }})</span>
+                              </li>
+                          {% endfor %}
+                      </ul>
+                  </div>
+                  <!-- End Single Widget -->
+              </div>
+              <!-- End Product Sidebar -->
+          </div>
+          <div class="col-lg-9 col-12">
+              <div class="product-grids-head">
+                  <div class="product-grid-topbar">
+                      <div class="row align-items-center">
+                          <div class="col-lg-8 ">
+                              <div class="nav " id="nav-tab" role="tablist">
+                                  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                      <button class="btn btn-outline-warning active" id="grid-3-columns" data-bs-toggle="tab"
+                                          data-bs-target="#nav-grid" type="button" role="tab"
+                                          aria-controls="nav-grid" aria-selected="true">
+                                          <i class="fa-solid fa-table-columns text-white"></i>
+                                      </button>
+                                      <button class="btn btn-outline-warning" id="grid-1-column" data-bs-toggle="tab"
+                                          data-bs-target="#nav-list" type="button" role="tab"
+                                          aria-controls="nav-list" aria-selected="false">
+                                          <i class="fa-solid fa-list"></i>
+                                      </button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="tab-content" id="nav-tabContent">
+                      <div class="tab-pane fade show active" id="nav-grid" role="tabpanel"
+                          aria-labelledby="nav-grid-tab">
+                          <div class="row row-cols-3" id="product-grid">
+                                  <!-- Start Single Product -->
+                                  {% for prod in productos_list %}
+                                  <div class="col">
+                                  <div class="single-product">
+                                      <div class="product-image">
+                                          <a href="producto/{{prod.id}}"><img class="card-img-top"src="{{ prod.imagen.url }}" alt=""></a>
+                                          <div class="button btn-warning">
+                                              <a href="product-details.html" class="btn"><i class="fa-solid fa-cart-shopping"></i>Agregar</a>
+                                          </div>
+                                      </div>
+                                      <div class="product-info">
+                                          <span class="category">{{prod.categoria.nombre}}</span>
+                                          <h4 class="title">
+                                              <a href="product-grids.html">{{prod.nombre}}</a>
+                                          </h4>
+                                          <div class="price">
+                                              <span>S/. {{prod.precio}}</span>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                                  {% endfor %}
+                                  <!-- End Single Product -->
+                          </div>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- End Product Grids -->
+<!-- JavaScript-->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const grid1ColumnsButton = document.getElementById("grid-1-column");
+      const grid3ColumnsButton = document.getElementById("grid-3-columns");
+      const productGrid = document.getElementById("product-grid");
+  
+      grid1ColumnsButton.addEventListener("click", function() {
+          productGrid.classList.remove("row-cols-3");
+          productGrid.classList.add("row-cols-1");
+
+          grid3ColumnsButton.classList.remove("active");
+          grid1ColumnsButton.classList.add("active");
+
+          toggleIconColor(grid1ColumnsButton);
+          toggleIconColor(grid3ColumnsButton);
+      });
+  
+      grid3ColumnsButton.addEventListener("click", function() {
+          productGrid.classList.remove("row-cols-1");
+          productGrid.classList.add("row-cols-3");
+
+          grid1ColumnsButton.classList.remove("active");
+
+          grid3ColumnsButton.classList.add("active");
+
+          toggleIconColor(grid3ColumnsButton);
+          toggleIconColor(grid1ColumnsButton);
+      });
+
+      function toggleIconColor(button) {
+          const icon = button.querySelector("i");
+          if (button.classList.contains("active")) {
+              icon.classList.add("text-white");
+          } else {
+              icon.classList.remove("text-white");
+          }
+      }
+  });
+</script>
 {% endblock %}
