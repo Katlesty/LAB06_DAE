@@ -109,43 +109,5 @@
 </section>
 <!-- End Product Grids -->
 <!-- JavaScript-->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-      const grid1ColumnsButton = document.getElementById("grid-1-column");
-      const grid3ColumnsButton = document.getElementById("grid-3-columns");
-      const productGrid = document.getElementById("product-grid");
-  
-      grid1ColumnsButton.addEventListener("click", function() {
-          productGrid.classList.remove("row-cols-3");
-          productGrid.classList.add("row-cols-1");
 
-          grid3ColumnsButton.classList.remove("active");
-          grid1ColumnsButton.classList.add("active");
-
-          toggleIconColor(grid1ColumnsButton);
-          toggleIconColor(grid3ColumnsButton);
-      });
-  
-      grid3ColumnsButton.addEventListener("click", function() {
-          productGrid.classList.remove("row-cols-1");
-          productGrid.classList.add("row-cols-3");
-
-          grid1ColumnsButton.classList.remove("active");
-
-          grid3ColumnsButton.classList.add("active");
-
-          toggleIconColor(grid3ColumnsButton);
-          toggleIconColor(grid1ColumnsButton);
-      });
-
-      function toggleIconColor(button) {
-          const icon = button.querySelector("i");
-          if (button.classList.contains("active")) {
-              icon.classList.add("text-white");
-          } else {
-              icon.classList.remove("text-white");
-          }
-      }
-  });
-</script>
 {% endblock %}
